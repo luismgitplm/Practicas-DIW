@@ -20,13 +20,10 @@
             </style>
         </defs>
 
-        <!-- Cuadrado azul marino claro a la izquierda -->
         <rect id="cuadrado" x="20" y="70" width="80" height="80" fill="#336699"/>
 
-        <!-- Triángulo equilátero naranja, arriba del círculo -->
         <polygon id="triangulo" points="200,40 230,100 170,100" fill="orange"/>
 
-        <!-- Círculo rojo debajo del triángulo -->
         <circle id="circulo" cx="200" cy="150" r="30" fill="red"/>
 
     </svg>
@@ -44,13 +41,10 @@
             </style>
         </defs>
 
-        <!-- Cuadrado azul marino claro a la izquierda -->
         <rect id="cuadrado2" x="20" y="70" width="80" height="80" fill="#336699"/>
 
-        <!-- Triángulo equilátero naranja, arriba del círculo -->
         <polygon id="triangulo2" points="200,40 230,100 170,100" fill="orange"/>
 
-        <!-- Círculo rojo debajo del triángulo -->
         <circle id="circulo2" cx="200" cy="150" r="30" fill="red"/>
 
     </svg>
@@ -65,13 +59,12 @@
     <h3>Ejercicio 5</h3>
     <svg viewBox="0 0 200 200" width="400" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <!-- Gradiente externo: gold arriba → red abajo -->
+            
             <linearGradient id="grad1" gradientTransform="rotate(90)">
             <stop offset="0%" stop-color="gold" />
             <stop offset="100%" stop-color="red" />
             </linearGradient>
 
-            <!-- Gradiente intermedio: invertido respecto al externo -->
             <linearGradient id="grad2" gradientTransform="rotate(90)">
             <stop offset="0%" stop-color="red" />
             <stop offset="100%" stop-color="gold" />
@@ -79,16 +72,12 @@
 
         </defs>
 
-        <!-- Círculo externo -->
         <circle cx="100" cy="100" r="75" fill="url(#grad1)" />
 
-        <!-- Círculo intermedio -->
         <circle cx="100" cy="100" r="55" fill="url(#grad2)" />
 
-        <!-- Círculo interno -->
         <circle cx="100" cy="100" r="35" fill="url(#grad1)" />
 
-        <!-- Círculo central más pequeño -->
         <circle cx="100" cy="100" r="15" fill="url(#grad2)" />
     </svg>
 
@@ -124,12 +113,10 @@
     <h3>Ejercicio 8</h3>
    <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <!-- Path curvado escalado -->
             <path id="curva" d="M 0 0 C 100 50 166.665 33.335 250 0" fill="transparent" 
                 transform="translate(75,100)"/>
         </defs>
 
-        <!-- Texto siguiendo el path, centrado -->
         <text font-family="Georgia" font-size="25" fill="black">
             <textPath href="#curva" startOffset="50%" text-anchor="middle">
             IES Playamar
@@ -141,21 +128,18 @@
     <h3>Ejercicio 10</h3>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
         <defs>
-            <!-- Gradiente arcoíris vertical -->
             <linearGradient id="arcoiris" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FF0000"/>   
-            <stop offset="20%" stop-color="#FF7F00"/>  
-            <stop offset="40%" stop-color="#FFFF00"/>  
-            <stop offset="60%" stop-color="#00FF00"/>  
-            <stop offset="80%" stop-color="#0000FF"/>  
-            <stop offset="100%" stop-color="#8B00FF"/> 
+                <stop offset="0%" stop-color="#FF0000"/>   
+                <stop offset="20%" stop-color="#FF7F00"/>  
+                <stop offset="40%" stop-color="#FFFF00"/>  
+                <stop offset="60%" stop-color="#00FF00"/>  
+                <stop offset="80%" stop-color="#0000FF"/>  
+                <stop offset="100%" stop-color="#8B00FF"/> 
             </linearGradient>
-
-            <!-- Path curvado original escalado y centrado -->
+            
             <path id="curva2" d="M 0 0 C 100 50 166.665 33.335 250 0" fill="transparent" transform="translate(75,100)"/>
         </defs>
 
-        <!-- Texto siguiendo el path -->
         <text font-family="Georgia" font-size="30">
             <textPath href="#curva2" startOffset="50%" text-anchor="middle" fill="url(#arcoiris)">
             Viva Torremolinos
