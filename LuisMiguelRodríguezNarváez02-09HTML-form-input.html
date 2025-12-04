@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 02-09: Form e Input</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        div{
+            text-align: center;
+            align-content: center;
+            margin: 10px 20% 10px 20%;
+            background-color: rgb(246, 222, 158);
+        }
+
+        body{
+            background-color: bisque;
+        }
+        dl>dt{
+            font-size: larger;
+        }
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Luis Miguel Rodríguez Narváez / Práctica 02-09a DIW</h1>
+    <h1>Ejercicio 1: Concepto de Formulario</h1>
+    <div>
+        <p>El formulario es la herramienta más utilizada en el diseño front-end para recoger 
+            datos del usuario y después validarlos y enviarlos al back-end.</p>
+    </div>
+
+    <h1>Ejercicio 2: Conceptos de Get y Post</h1>
+    <div>
+        <p>Ambos son métodos de envío de datos desde un formulario. En el método get, estos datos
+            quedan reflejados directamente en la URL. Esto resulta en una reducción de la confidencialidad
+            aunque poseen la ventaja de poder guardar la página tras haber enviado los datos. El método
+            post realiza el mismo envío pero adjuntando los datos en la cabecera del paquete de datos, lo que
+            lo hace más seguro pero sin garantizar por completo la confidencialidad. 
+        </p>
+    </div>
+
+    <h1>Ejercicio 3: Atributos</h1>
+    <div>
+        <dl>
+            <dt>Accept-charset</dt>
+            <dd>Especifica el conjunto de caracteres que el formulario puede usar al enviar datos al servidor</dd>
+            <dt>Autocomplete</dt>
+            <dd>Indica si el navegador debe autocompletar los campos del formulario con valores previamente introducidos</dd>
+            <dt>Enctype</dt>
+            <dd>Define cómo se codifican los datos del formulario al enviarse</dd>
+            <dt>Novalidate</dt>
+            <dd>Indica que el formulario debe enviarse sin realizar validación de los campos por parte del navegador</dd>
+            <dt>Target</dt>
+            <dd>Define dónde se mostrará la respuesta del servidor después de enviar el formulario</dd>
+        </dl>
+    </div>
+
+    <h1>Ejercicio 4: Atributos text explicados en tres o cuatro palabras</h1>
+    <div>
+        <table>
+            <tr>
+                <td>Type</td>
+                <td>Tipo de campo</td>
+                <td>Form</td>
+                <td>Asocia a formulario</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Nombre del campo</td>
+                <td>Formnovalidated</td>
+                <td>Ignora validación de formulario</td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td>Ancho del campo</td>
+                <td>Maxlength</td>
+                <td>Máximo de caracteres permitidos</td>
+            </tr>
+            <tr>
+                <td>Value</td>
+                <td>Valor del campo</td>
+                <td>Id</td>
+                <td>Identificador único</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>Desactiva el campo</td>
+                <td>Readonly</td>
+                <td>Solo lectura</td>
+            </tr>
+            <tr>
+                <td>Autocomplete</td>
+                <td>Autocompletar activado/desactivado</td>
+                <td>Required</td>
+                <td>Campo obligatorio</td>
+            </tr>
+            <tr>
+                <td>Autofocus</td>
+                <td>Enfoca al cargar</td>
+                <td>Pattern</td>
+                <td>Expresión regular válida</td>
+            </tr>
+            <tr>
+                <td>PlaceHolder</td>
+                <td>Texto de ayuda</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Ejercicio 5: Formulario</h1>
+    <div>
+        <form method="get">
+            <label >Nombre</label>
+            <input type="text" pattern="[A-Za-z\s]+" required autofocus>
+
+            <lable>Apellidos</lable>
+            <input type="text" pattern="[A-Za-z\s]+" required>
+
+            <lable>Edad</lable>
+            <input type="text" pattern="[1-9]+" required>
+
+            <lable>Contraseña</lable>
+            <input type="password" size="5" maxlength="5">
+
+        </form>
+    </div>
+
+
+</body>
+</html>
