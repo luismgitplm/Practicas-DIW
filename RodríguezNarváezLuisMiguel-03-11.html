@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Luis Miguel Rodríguez Narváez / 03-11 DIW</h1>
+    <h3>Ejercicio 2</h3>
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            ellipse { fill: lightblue; stroke: darkblue; stroke-width: 1; cursor: pointer; }
+        </style>
+
+        <ellipse id="miElipse" cx="50" cy="50" rx="30" ry="20">
+            <animate id="animRx" attributeName="rx" to="20" dur="0.5s" begin="indefinite" fill="freeze" />
+            <animate id="animRy" attributeName="ry" to="30" dur="0.5s" begin="indefinite" fill="freeze" />
+        </ellipse>
+    </svg>
+
+    <script type="application/ecmascript">
+        const elipse = document.getElementById("miElipse");
+        const animRx = document.getElementById("animRx");
+        const animRy = document.getElementById("animRy");
+
+        let cambiado = false;
+
+        elipse.addEventListener("click", () => {
+            if (!cambiado) {
+                animRx.setAttribute("to", elipse.getAttribute("ry"));
+                animRy.setAttribute("to", elipse.getAttribute("rx"));
+            } else {
+                animRx.setAttribute("to", elipse.getAttribute("rx"));
+                animRy.setAttribute("to", elipse.getAttribute("ry"));
+            }
+            animRx.beginElement();
+            animRy.beginElement();
+            cambiado = !cambiado;
+        });
+    </script>
+
+    <h3>Ejercicio 3</h3>
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    ellipse { fill: lightblue; stroke: darkblue; stroke-width: 2; cursor: pointer; }
+  </style>
+
+  <!-- Ellipses -->
+  <ellipse id="el1" cx="40" cy="40" rx="20" ry="10">
+    <animate id="rx1" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry1" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el2" cx="120" cy="40" rx="20" ry="10">
+    <animate id="rx2" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry2" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el3" cx="40" cy="120" rx="20" ry="10">
+    <animate id="rx3" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry3" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el4" cx="120" cy="120" rx="20" ry="10">
+    <animate id="rx4" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry4" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el5" cx="80" cy="80" rx="20" ry="10">
+    <animate id="rx5" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry5" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+</svg>
+
+<script type="application/ecmascript">
+    function asignarAnimacion(elId, rxId, ryId, newRx, newRy) {
+      const el = document.getElementById(elId);
+      const animRx = document.getElementById(rxId);
+      const animRy = document.getElementById(ryId);
+      let cambiado = false;
+
+      el.addEventListener("click", () => {
+        if (!cambiado) {
+          animRx.setAttribute("to", newRx);
+          animRy.setAttribute("to", newRy);
+        } else {
+          animRx.setAttribute("to", el.getAttribute("rx"));
+          animRy.setAttribute("to", el.getAttribute("ry"));
+        }
+        animRx.beginElement();
+        animRy.beginElement();
+        cambiado = !cambiado;
+      });
+    }
+
+    asignarAnimacion("el1", "rx1", "ry1", "30", "15");
+    asignarAnimacion("el2", "rx2", "ry2", "25", "20");
+    asignarAnimacion("el3", "rx3", "ry3", "35", "12");
+    asignarAnimacion("el4", "rx4", "ry4", "28", "18");
+    asignarAnimacion("el5", "rx5", "ry5", "40", "20");
+  </script>
+
+  <h3>Ejercicio 4</h3>
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    ellipse { fill: lightblue; stroke: darkblue; stroke-width: 2; cursor: pointer; }
+  </style>
+
+  <ellipse id="el1" cx="40" cy="40" rx="20" ry="10">
+    <animate id="rx1" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry1" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animateTransform id="move" attributeName="transform" type="translate" from="0 0" to="-10 0" dur="0.3s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el2" cx="120" cy="40" rx="20" ry="10">
+    <animate id="rx2" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry2" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animateTransform id="move2" attributeName="transform" type="translate" from="0 0" to="-10 0" dur="0.3s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el3" cx="40" cy="120" rx="20" ry="10">
+    <animate id="rx3" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry3" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animateTransform id="move3" attributeName="transform" type="translate" from="0 0" to="-10 0" dur="0.3s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el4" cx="120" cy="120" rx="20" ry="10">
+    <animate id="rx4" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry4" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animateTransform id="move4" attributeName="transform" type="translate" from="0 0" to="-10 0" dur="0.3s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+
+  <ellipse id="el5" cx="80" cy="80" rx="20" ry="10">
+    <animate id="rx5" attributeName="rx" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animate id="ry5" attributeName="ry" dur="0.5s" begin="indefinite" fill="freeze"/>
+    <animateTransform id="move5" attributeName="transform" type="translate" from="0 0" to="-10 0" dur="0.3s" begin="indefinite" fill="freeze"/>
+  </ellipse>
+</svg>
+
+<script type="application/ecmascript">
+
+    // Animación de movimiento común
+    const moveIds = ["move", "move2", "move3", "move4", "move5"];
+    moveIds.forEach(id => {
+      const anim = document.getElementById(id);
+      const el = anim.parentNode;
+
+      el.addEventListener("mouseenter", () => {
+        anim.beginElement();
+      });
+
+      // Opción: volver a la posición original al salir
+      el.addEventListener("mouseleave", () => {
+        anim.setAttribute("from", "-10 0");
+        anim.setAttribute("to", "0 0");
+        anim.beginElement();
+        anim.setAttribute("from", "0 0");
+        anim.setAttribute("to", "-10 0"); // restablecer para próxima vez
+      });
+    });
+</script>
+
+<h3>Ejercicio 5</h3>
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        circle { fill: orange; stroke: darkred; stroke-width: 2; }
+    </style>
+
+    <circle cx="20" cy="50" r="10">
+        <animate attributeName="cx" from="20" to="180" dur="2s" begin="0s" fill="freeze" />
+        <set attributeName="visibility" to="hidden" begin="2s" />
+    </circle>
+
+    <circle cx="20" cy="30" r="10">
+        <animate attributeName="cx" from="20" to="180" dur="2s" begin="2s" fill="freeze" />
+        <set attributeName="visibility" to="hidden" begin="4s" />
+    </circle>
+
+    <circle cx="20" cy="70" r="10">
+        <animate attributeName="cx" from="20" to="180" dur="2s" begin="4s" fill="freeze" />
+        <set attributeName="visibility" to="hidden" begin="6s" />
+    </circle>   
+
+    <circle cx="20" cy="50" r="10">
+        <animate attributeName="cx" from="20" to="180" dur="2s" begin="6s" fill="freeze" />
+        <set attributeName="visibility" to="hidden" begin="8s" />
+    </circle>
+</svg>
+
+<h3>Ejercicio 6</h3>
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <rect id="miRect" x="50" y="25" width="100" height="50" fill="steelblue"/>
+</svg>
+
+<script type="application/ecmascript">
+    const rect = document.getElementById("miRect");
+
+    rect.addEventListener("click", () => {
+      rect.setAttribute("opacity", "0.5"); 
+      alert("pulsado"); 
+    });
+</script>
+
+<h3>Ejercicio 7</h3>
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { 
+      font: bold 30px sans-serif; 
+      fill: lightblue; 
+      cursor: pointer; 
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+
+  <rect x="0" y="0" width="300" height="75" fill="purple" />
+  <rect x="0" y="75" width="300" height="75" fill="green" />
+
+  <text id="texto" x="150" y="75">Málaga!
+    <animateTransform id="anim" attributeName="transform" type="rotate"
+                      from="0 150 75" to="360 150 75" dur="1s" begin="indefinite" repeatCount="1"/>
+  </text>
+</svg>
+
+<script type="application/ecmascript">
+    const texto = document.getElementById("texto");
+    const anim = document.getElementById("anim");
+
+    texto.addEventListener("click", () => {
+      anim.beginElement();
+    });
+  </script>
+
+  <h3>Ejercicio 9</h3>
+
+ 
+
+<svg viewBox="0 0 400 250">
+  
+  <rect id="rectRotate" x="20" y="20" width="50" height="50" fill="indigo"></rect>
+
+  <rect id="rectScale" x="120" y="20" width="50" height="50" fill="green"></rect>
+
+  <rect id="rectSkew" x="220" y="20" width="50" height="50" fill="orange"></rect>
+</svg>
+
+<p>ROTATE: Ángulo
+  <input id="a" type="range" min="0" max="360" value="20">
+</p>
+<p>Centro X
+  <input id="x" type="range" min="0" max="50" value="25">
+</p>
+<p>Centro Y
+  <input id="y" type="range" min="0" max="50" value="25">
+</p>
+<output id="outputRotate"></output>
+
+<hr>
+
+<p>SCALE:
+  <input id="s" type="range" min="0.1" max="3" step="0.1" value="1">
+</p>
+<output id="outputScale"></output>
+
+<hr>
+
+<p>SKEW: SkewX
+  <input id="sx" type="range" min="0" max="50" value="0">
+</p>
+<p>SkewY
+  <input id="sy" type="range" min="0" max="50" value="0">
+</p>
+<output id="outputSkew"></output>
+
+<script>
+  const rectRotate = document.getElementById("rectRotate");
+  const a = document.getElementById("a");
+  const x = document.getElementById("x");
+  const y = document.getElementById("y");
+  const outputRotate = document.getElementById("outputRotate");
+
+  function updateRotate() {
+    const angle = a.value;
+    const cx = x.value;
+    const cy = y.value;
+    rectRotate.setAttribute("transform", `rotate(${angle} ${cx} ${cy})`);
+    outputRotate.value = `rotate(${angle}, ${cx}, ${cy})`;
+  }
+  a.addEventListener("input", updateRotate);
+  x.addEventListener("input", updateRotate);
+  y.addEventListener("input", updateRotate);
+  updateRotate();
+
+  const rectScale = document.getElementById("rectScale");
+  const s = document.getElementById("s");
+  const outputScale = document.getElementById("outputScale");
+
+  function updateScale() {
+    const scale = s.value;
+    rectScale.setAttribute("transform", `scale(${scale})`);
+    outputScale.value = `scale(${scale})`;
+  }
+  s.addEventListener("input", updateScale);
+  updateScale();
+
+  const rectSkew = document.getElementById("rectSkew");
+  const sx = document.getElementById("sx");
+  const sy = document.getElementById("sy");
+  const outputSkew = document.getElementById("outputSkew");
+
+  function updateSkew() {
+    const skewX = sx.value;
+    const skewY = sy.value;
+    rectSkew.setAttribute("transform", `skewX(${skewX}) skewY(${skewY})`);
+    outputSkew.value = `skewX(${skewX}) skewY(${skewY})`;
+  }
+  sx.addEventListener("input", updateSkew);
+  sy.addEventListener("input", updateSkew);
+  updateSkew();
+</script>
+
+
+</body>
+</html>
