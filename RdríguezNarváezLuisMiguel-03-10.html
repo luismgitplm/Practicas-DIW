@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Luis Miguel Rodríguez Narváez / 03-10 DIW</h1>
+    <h3>Ejercicio 2</h3>
+
+    <svg width="300" height="220" viewBox="0 0 300 220"
+     xmlns="http://www.w3.org/2000/svg" style="background:white">
+
+            <rect x="20" y="70" width="80" height="80" fill="#336699">
+                <animate attributeName="x"
+                        values="20; 10; 20"
+                        dur="2s"
+                        repeatCount="indefinite"/>
+            </rect>
+
+            <polygon points="200,40 230,100 170,100" fill="orange">
+                <animate attributeName="points"
+                        values="
+                            200,40 230,100 170,100;
+                            210,40 240,100 180,100;
+                            200,40 230,100 170,100"
+                        dur="2s"
+                        repeatCount="indefinite"/>
+            </polygon>
+
+            <circle cx="200" cy="150" r="30" fill="red">
+                <animate attributeName="cx"
+                        values="200; 215; 200"
+                        dur="2s"
+                        repeatCount="indefinite"/>
+            </circle>
+    </svg>
+
+    <h3>Ejercicio 3</h3>
+
+    <svg width="300" height="220" viewBox="0 0 300 220"
+     xmlns="http://www.w3.org/2000/svg" style="background:white">
+
+            <rect x="20" y="70" width="80" height="80" fill="#336699">
+                <animate attributeName="fill"
+                        values="#336699; orange; #336699"
+                        dur="6s"
+                        repeatCount="indefinite"/>
+            </rect>
+
+            <polygon points="200,40 230,100 170,100" fill="orange">
+                <animate attributeName="fill"
+                        values="orange; red; orange"
+                        dur="6s"
+                        repeatCount="indefinite"/>
+            </polygon>
+
+            <circle cx="200" cy="150" r="30" fill="red">
+                <animate attributeName="fill"
+                        values="red; #336699; red"
+                        dur="6s"
+                        repeatCount="indefinite"/>
+            </circle>
+    </svg>
+
+    <h3>Ejercicio 4</h3>
+    <svg width="300" height="220" viewBox="0 0 300 220"
+     xmlns="http://www.w3.org/2000/svg" style="background:white">
+
+        <path id="curva" d="M0,0 C5,3 5,6 0,9 C-5,6 -5,3 0,0" fill="none" stroke="none"/>
+
+        <rect x="20" y="70" width="80" height="80" fill="#336699">
+            <animateMotion dur="3s" repeatCount="indefinite" rotate="0">
+                <mpath href="#curva"/>
+            </animateMotion>
+        </rect>
+
+        <polygon points="200,40 230,100 170,100" fill="orange">
+            <animateMotion dur="3s" repeatCount="indefinite" rotate="0">
+                <mpath href="#curva"/>
+            </animateMotion>
+        </polygon>
+
+        <circle cx="200" cy="150" r="30" fill="red">
+            <animateMotion dur="3s" repeatCount="indefinite" rotate="0">
+                <mpath href="#curva"/>
+            </animateMotion>
+        </circle>
+    </svg>
+
+    <h3>Ejercicio 5</h3>
+    <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+        <style>
+        .small { font: italic 13px sans-serif; }
+        .heavy { font: bold 30px sans-serif; }
+        .Rrrrr { font: italic 40px serif; fill: red; }
+        </style>
+
+        <text x="20" y="35" class="small">
+        El 
+        <animateTransform attributeName="transform"
+                            type="translate"
+                            values="0 0; -10 0; 0 0"
+                            dur="2s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="40" y="35" class="heavy">
+        IES Playamar
+        <animateTransform attributeName="transform"
+                            type="translate"
+                            values="0 0; -10 0; 0 0"
+                            dur="2s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="55" y="55" class="small">
+        es
+        <animateTransform attributeName="transform"
+                            type="translate"
+                            values="0 0; -10 0; 0 0"
+                            dur="2s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="65" y="55" class="Rrrrr">
+        Genial!
+        <animateTransform attributeName="transform"
+                            type="translate"
+                            values="0 0; -10 0; 0 0"
+                            dur="2s"
+                            repeatCount="indefinite"/>
+        </text>
+
+    </svg>
+
+    <h3>Ejercicio 6</h3>
+    <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+        .small { font: italic 6px sans-serif; }
+        .heavy { font: bold 12px sans-serif; }
+        .Rrrrr { font: italic 15px serif; fill: red; }
+        </style>
+
+        <text x="20" y="50" class="small">
+        El
+        <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 80 75"
+                            to="360 80 75"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="40" y="50" class="heavy">
+        IES Playamar
+        <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 80 75"
+                            to="360 80 75"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="55" y="70" class="small">
+        es
+        <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 80 75"
+                            to="360 80 75"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="65" y="70" class="Rrrrr">
+        Genial!
+        <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 80 75"
+                            to="360 80 75"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+    </svg>
+
+    <h3>Ejercicio 7</h3>
+    <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            .small { font: italic 6px sans-serif; }
+            .heavy { font: bold 12px sans-serif; }
+            .Rrrrr { font: italic 15px serif; fill: red; }
+        </style>
+
+        <!-- Cada palabra gira sobre su propio centro -->
+        <text x="20" y="70" class="small" text-anchor="middle">
+            El
+            <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 20 70"
+                            to="360 20 70"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="60" y="70" class="heavy" text-anchor="middle">
+            IES Playamar
+            <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 60 70"
+                            to="360 60 70"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="60" y="90" class="small" text-anchor="middle">
+            es
+            <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 60 90"
+                            to="360 60 90"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+
+        <text x="120" y="90" class="Rrrrr" text-anchor="middle">
+            Genial!
+            <animateTransform attributeName="transform"
+                            type="rotate"
+                            from="0 120 90"
+                            to="360 120 90"
+                            dur="5s"
+                            repeatCount="indefinite"/>
+        </text>
+    </svg>
+
+
+
+</body>
+</html>
