@@ -53,5 +53,44 @@
         </filter>
         <circle cx="100" cy="100" r="100" style="filter: url(#displacementFilter)" />
     </svg>
+
+    <h3>Ejemplo 4</h3>
+    <!--Moldes seguros-->
+    <svg 
+        width="300" 
+        height="300"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid meet"
+        style="border: 1px solid #ccc;"
+>
+        <!-- Zona segura: agrega padding interno (10%) -->
+        <g id="safe-area" transform="translate(10,10)">
+            <!-- Ejemplo de animación dentro de un área segura 80x80 -->
+            <circle cx="40" cy="40" r="10" fill="tomato">
+                <animate 
+                    attributeName="cx"
+                    from="20" to="60"
+                    dur="2s"
+                    repeatCount="indefinite"
+                    fill="freeze"
+                />
+            </circle>
+        </g>
+    </svg>
+
+    <svg 
+        width="300" 
+        height="300"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid meet"
+    >
+        <!-- ZONA SEGURA: padding 10% -->
+        <g transform="translate(10,10)">
+            <!-- Tu contenido animado (máximo 80×80) -->
+        </g>
+    </svg>
+
+
 </body>
 </html>
+
