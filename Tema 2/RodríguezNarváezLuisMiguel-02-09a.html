@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Luis Miguel Rodríguez Narváez / 02-09a DIW</h1>
+    <h1>Ejercicio 1</h1>
+    <p>
+        Los formularios permiten que el usuario introduzca datos en una página web y 
+        estos se envíen al servidor para ser procesados. Se componen de campos como 
+        cajas de texto, botones o listas, que reúnen información y la transmiten al 
+        destino indicado en el atributo action usando un método de envío como GET o POST.
+    </p>
+
+    <h1>Ejercicio 2</h1>
+    <p>
+        El método GET envía los datos en la URL, es rápido, visible y útil para búsquedas.  
+        El método POST envía los datos en el cuerpo de la petición, más seguro y permite 
+        enviar más información, ideal para formularios privados.
+    </p>
+
+    <h1>Ejercicio 3</h1>
+    <dl>
+        <dt>accept-charset</dt>
+        <dd>Define la codificación usada al enviar datos.</dd>
+
+        <dt>autocomplete</dt>
+        <dd>Activa o desactiva el autocompletado.</dd>
+
+        <dt>enctype</dt>
+        <dd>Indica cómo se codifican los datos en el envío.</dd>
+
+        <dt>novalidate</dt>
+        <dd>Evita validar antes de enviar.</dd>
+
+        <dt>target</dt>
+        <dd>Indica dónde se abre la respuesta.</dd>
+    </dl>
+
+    <h1>Ejercicio 4</h1>
+    <table border="1">
+        <caption><h1>Atributos text</h1></caption>
+        <tr><th>Atributo</th><th>Descripción</th></tr>
+        <tr><td>type</td><td>Tipo de campo</td></tr>
+        <tr><td>form</td><td>Formulario asociado</td></tr>
+        <tr><td>name</td><td>Nombre del campo</td></tr>
+        <tr><td>formnovalidated</td><td>No validar envío</td></tr>
+        <tr><td>size</td><td>Ancho visible campo</td></tr>
+        <tr><td>maxlength</td><td>Máx. caracteres</td></tr>
+        <tr><td>value</td><td>Valor inicial</td></tr>
+        <tr><td>id</td><td>Identificador único</td></tr>
+        <tr><td>disabled</td><td>Deshabilitado</td></tr>
+        <tr><td>readonly</td><td>No editable</td></tr>
+        <tr><td>autocomplete</td><td>Autocompletar</td></tr>
+        <tr><td>required</td><td>Obligatorio</td></tr>
+        <tr><td>autofocus</td><td>Enfocado al inicio</td></tr>
+        <tr><td>pattern</td><td>Formato requerido</td></tr>
+        <tr><td>placeholder</td><td>Texto guía</td></tr>
+    </table>
+
+    <h1>Ejercicio 5</h1>
+    <form method="get">
+
+        <label for="Nombre">Nombre:</label>
+        <input id="Nombre" name="Nombre" type="text" pattern="[A-Za-z]+" required autofocus><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input id="apellidos" name="apellidos" type="text" pattern="[A-Za-z ]+" required><br><br>
+
+        <label for="edad">Edad:</label>
+        <input id="edad" name="edad" type="text" pattern="[0-9]+" required><br><br>
+
+        <label for="Contraseña">Contraseña:</label>
+        <input id="Contraseña" name="Contraseña" type="password" size="5"><br><br>
+
+        <input type="hidden" name="oculto" value="edad">
+
+    
+        <button type="button">Botón</button>
+        <button type="submit">Enviar</button>
+        <button type="reset">Reset</button>
+        
+        <input type="submit" value="Input Submit">
+        <input type="reset" value="Input Reset">
+        <br><br>
+
+    </form>
+
+    <h1>Ejercicio 6</h1>
+    <ol>
+        <li><strong>formaction:</strong> URL donde enviará el formulario.</li>
+        <li><strong>formmethod:</strong> Método de envío (GET o POST).</li>
+        <li><strong>formenctype:</strong> Tipo de codificación de datos.</li>
+        <li><strong>formnovalidate:</strong> Evita la validación al pulsar ese botón.</li>
+        <li><strong>formtarget:</strong> Ventana donde se abre la respuesta.</li>
+    </ol>
+
+    <h1>Ejercicio 7</h1>
+    <form method="get">
+
+        <label>Texto:</label>
+        <input type="text" name="texto"><br><br>
+
+        <p>Elige una opción:</p>
+        <input type="radio" name="opcion" value="1"> Opción 1<br>
+        <input type="radio" name="opcion" value="2"> Opción 2<br>
+        <input type="radio" name="opcion" value="3"> Opción 3<br>
+        <input type="radio" name="opcion" value="4"> Opción 4<br><br>
+
+        <p>Casillas:</p>
+        <input type="checkbox" name="c1" value="A"> Casilla 1<br>
+        <input type="checkbox" name="c2" value="B"> Casilla 2<br><br>
+
+        <label for="archivo">Archivo:</label>
+        <input id="archivo" name="archivo" type="file"><br><br>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+</html>
