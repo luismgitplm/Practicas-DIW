@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios de Animaciones con Keyframes</title>
+<style>
+  /* Estilos generales para los ejemplos */
+  .caja, .color-change, .fadein, .rotar, .rebote, .retraso {
+    margin: 20px;
+    padding: 20px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  /* =====================================================
+     Ejercicio 1: Desplazamiento horizontal
+     ===================================================== */
+  .caja {
+    background-color: #3498db; /* azul */
+    animation: moverHorizontal 2s forwards;
+  }
+
+  @keyframes moverHorizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(300px); }
+  }
+
+  /* =====================================================
+     Ejercicio 2: Cambio de color progresivo
+     ===================================================== */
+  .color-change {
+    background-color: blue;
+    animation: cambiarColor 3s infinite;
+  }
+
+  @keyframes cambiarColor {
+    0% { background-color: blue; }
+    50% { background-color: green; }
+    100% { background-color: red; }
+  }
+
+  /* =====================================================
+     Ejercicio 3: Aparición suave (fade in)
+     ===================================================== */
+  .fadein {
+    background-color: #9b59b6; /* morado */
+    opacity: 0;
+    animation: aparecer 2s forwards;
+  }
+
+  @keyframes aparecer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* =====================================================
+     Ejercicio 4: Rotación continua
+     ===================================================== */
+  .rotar {
+    background-color: #e67e22; /* naranja */
+    animation: girar 2s linear infinite;
+  }
+
+  @keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* =====================================================
+     Ejercicio 5: Escalado con rebote
+     ===================================================== */
+  .rebote {
+    background-color: #2ecc71; /* verde */
+    transform: scale(0);
+    animation: reboteAnim 1s ease-out forwards;
+  }
+
+  @keyframes reboteAnim {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  /* =====================================================
+     Ejercicio 6: Animación con retraso y dirección inversa
+     ===================================================== */
+  .retraso {
+    background-color: #e74c3c; /* rojo */
+    animation: moverHorizontal 2s reverse forwards;
+    animation-delay: 1s;
+  }
+
+</style>
+</head>
+<body>
+
+<h2>Ejercicio 1</h2>
+<div class="caja">Mover Horizontal</div>
+
+<h2>Ejercicio 2</h2>
+<div class="color-change">Cambio de color</div>
+
+<h2>Ejercicio 3</h2>
+<div class="fadein">Fade In</div>
+
+<h2>Ejercicio 4</h2>
+<div class="rotar">Rotar</div>
+
+<h2>Ejercicio 5</h2>
+<div class="rebote">Rebote</div>
+
+<h2>Ejercicio 6</h2>
+<div class="retraso">Retraso y reversa</div>
+
+<!-- 
+  =====================================================
+  BLOQUE DE COMENTARIOS: Keyframes en CSS
+  =====================================================
+
+   Qué es un keyframe:
+    - Define un estado de la animación en un momento específico.
+    - Sintaxis: @keyframes nombre { porcentaje { propiedad: valor; } ... }
+
+   Tipos de porcentajes:
+    - 0% → inicio de la animación
+    - 100% → fin de la animación
+    - Se pueden usar intermedios: 25%, 50%, 75% para más control
+
+   Propiedades más comunes:
+    - transform: translateX/Y, rotate, scale → mover, girar, escalar
+    - opacity → transparencia
+    - background-color → cambio de color
+    - cualquier propiedad animable puede usarse
+
+   Animación (animation):
+    - animation-name → nombre del keyframe
+    - animation-duration → duración (ej: 2s)
+    - animation-timing-function → velocidad (linear, ease, ease-out, etc.)
+    - animation-delay → retraso antes de empezar
+    - animation-iteration-count → número de veces que se repite (infinite)
+    - animation-direction → normal, reverse, alternate
+    - animation-fill-mode → forwards, backwards, none, both
+
+   Consejos:
+    - Combinar porcentajes y varias propiedades permite animaciones complejas.
+    - Para movimientos suaves usar transform y opacity, evita animar propiedades que afecten el reflow.
+    - Las funciones de tiempo (ease, ease-out, linear) controlan la aceleración de la animación.
+    - animation-fill-mode: forwards mantiene el estado final al terminar la animación.
+-->
+</body>
+</html>

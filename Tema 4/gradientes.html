@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Explicación Gradientes CSS</title>
+  <style>
+    /* 
+      =====================================================
+       Linear Gradient (degradado lineal)
+      Sintaxis general: linear-gradient(dirección, color1 posición, color2 posición, ...)
+
+      Ejemplo:
+      .color-2 {
+        background: linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+      }
+
+      Explicación de cada parte:
+      - 90deg → Dirección del degradado
+        0deg = abajo hacia arriba
+        90deg = izquierda a derecha
+        180deg = arriba hacia abajo
+        270deg = derecha a izquierda
+      - #e74d6b 10% → Primer color, empieza a mostrarse en el 10% del recorrido
+      - #8cc8ac 90% → Segundo color, se consolida en el 90% del recorrido
+      - Resultado: transición suave entre los colores según las posiciones.
+    */
+
+    /*
+      =====================================================
+       Conic Gradient (degradado cónico)
+      Sintaxis general: conic-gradient(from ángulo, color1, color2, ...)
+
+      Ejemplo:
+      .color-91 {
+        background: conic-gradient(from 45deg, orange, yellow, orange);
+      }
+
+      Explicación:
+      - from 45deg → punto inicial del degradado circular (giro alrededor del centro)
+        Por defecto empieza en 0deg si no se pone 'from'.
+      - orange, yellow, orange → Colores del degradado
+        Repetir el primer color al final es recomendable para cerrar el círculo suavemente.
+      - No es obligatorio usar 'from' ni repetir el primer color, pero mejora el efecto visual.
+    */
+
+    /*
+      =====================================================
+       Radial Gradient (degradado radial)
+      Sintaxis general: radial-gradient(forma, color1 posición, color2 posición, ...)
+
+      Ejemplo:
+      .color-6 {
+        background: radial-gradient(
+          circle,
+          rgba(32,69,251,1) 0%,
+          rgba(34,193,195,1) 49%,
+          rgba(32,69,251,1) 100%
+        );
+      }
+
+      Explicación:
+      - circle → forma del degradado (puede ser circle o ellipse)
+      - rgba(...) → color en formato rojo-verde-azul-alpha (opacidad)
+        - 1 = totalmente opaco
+        - 0 = totalmente transparente
+      - 0%, 49%, 100% → posiciones del degradado desde el centro hacia el borde
+      - Repetir el color inicial al final crea un efecto de "anillo" o continuidad.
+    */
+
+    /*
+      =====================================================
+      Resumen rápido:
+
+      | Tipo              | Dirección / Control |
+      |------------------|-------------------|
+      | linear-gradient   | Línea recta       |
+      | radial-gradient   | Expansión desde el centro, forma (círculo/óvalo) |
+      | conic-gradient    | Giro circular, ángulo inicial con 'from' |
+
+      Notas importantes:
+      - En conic-gradient, 'from' indica el ángulo inicial, no obligatorio.
+      - Repetir el primer color al final es recomendable para cerrar visualmente el círculo.
+      - En radial y linear, los porcentajes determinan dónde empieza y termina cada color.
+    */
+  </style>
+</head>
+<body>
+<!-- 
+  Este documento contiene únicamente explicaciones sobre CSS Gradients:
+
+  - linear-gradient
+  - radial-gradient
+  - conic-gradient
+
+  Los comentarios explican:
+  - Qué hace cada atributo
+  - Por qué se usa 'from' en conic-gradient
+  - Cómo funcionan las posiciones y colores
+-->
+</body>
+</html>

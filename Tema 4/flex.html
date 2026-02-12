@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos Flexbox</title>
+<style>
+/* ================= EJEMPLO 1 ================= */
+/* Flex en fila, sin wrap */
+.ej1 {
+  display: flex; /* Activa el flexbox */
+  flex-flow: row nowrap; /* Dirección: fila, No hay salto de línea */
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.ej1 div {
+  background-color: #6C9BD1;
+  color: white;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= EJEMPLO 2 ================= */
+/* Flex en columna, wrap inverso */
+.ej2 {
+  display: flex;
+  flex-flow: column-reverse wrap; /* Dirección columna invertida y permite saltos de línea */
+  height: 300px; /* Necesario para ver la columna */
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.ej2 div {
+  background-color: #F28C8C;
+  color: white;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= EJEMPLO 3 ================= */
+/* Flex en fila, wrap directo */
+.ej3 {
+  display: flex;
+  flex-flow: row wrap; /* Dirección fila y permite saltos de línea */
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.ej3 div {
+  background-color: #8CC8AC;
+  color: white;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= EJEMPLO 4 ================= */
+/* Flex en columna reversa, wrap directo */
+.ej4 {
+  display: flex;
+  flex-flow: column-reverse wrap; /* Dirección columna invertida y permite wrap */
+  height: 300px;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.ej4 div {
+  background-color: #F2C94C;
+  color: white;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= EJEMPLO 5 ================= */
+/* Justify content y align items */
+.ej5 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; /* Distribuye espacio entre los items */
+  align-items: center; /* Centra verticalmente los items */
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+}
+.ej5 div {
+  background-color: #A569BD;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= EJEMPLO 6 ================= */
+/* Flex grow, shrink y basis */
+.ej6 {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.ej6 div:nth-child(1) { flex: 1 1 100px; background-color: #3498DB; color:white; }
+.ej6 div:nth-child(2) { flex: 2 1 100px; background-color: #E74C3C; color:white; }
+.ej6 div:nth-child(3) { flex: 1 2 50px; background-color: #2ECC71; color:white; }
+.ej6 div { margin: 5px; padding: 20px; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<h2>Ejemplo 1: Fila sin wrap</h2>
+<div class="ej1">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+</div>
+
+<h2>Ejemplo 2: Columna inversa con wrap</h2>
+<div class="ej2">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+</div>
+
+<h2>Ejemplo 3: Fila con wrap</h2>
+<div class="ej3">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+</div>
+
+<h2>Ejemplo 4: Columna inversa con wrap</h2>
+<div class="ej4">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+</div>
+
+<h2>Ejemplo 5: Justify y Align</h2>
+<div class="ej5">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+</div>
+
+<h2>Ejemplo 6: Flex-grow, flex-shrink y flex-basis</h2>
+<div class="ej6">
+  <div>1</div><div>2</div><div>3</div>
+</div>
+
+<!-- ================= BLOQUE DE COMENTARIOS SOBRE FLEX ================= -->
+<!-- 
+1. display: flex -> activa el modelo flexible en el contenedor.
+2. flex-direction -> define la dirección principal:
+   - row (fila), row-reverse, column (columna), column-reverse.
+3. flex-wrap -> permite si los items se ajustan a múltiples líneas: nowrap, wrap, wrap-reverse.
+4. flex-flow -> atajo para flex-direction + flex-wrap.
+5. justify-content -> alinea los items a lo largo del eje principal:
+   flex-start, flex-end, center, space-between, space-around, space-evenly.
+6. align-items -> alinea los items a lo largo del eje transversal: flex-start, flex-end, center, stretch, baseline.
+7. align-content -> alinea varias líneas de items en contenedores con wrap.
+8. flex (grow, shrink, basis) -> define cómo crece, se encoge y tamaño base de un item.
+9. order -> cambia el orden visual de los items sin modificar el HTML.
+10. margin en items -> útil para separar elementos en flex.
+11. Cada ejemplo de este archivo muestra combinaciones de estas propiedades para observar su comportamiento.
+
+justify-content → eje principal (primario)
+
+align-items → eje transversal (secundario/opuesto)
+-->
+
+</body>
+</html>

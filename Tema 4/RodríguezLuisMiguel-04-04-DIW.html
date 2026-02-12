@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios CSS y JavaScript</title>
+
+<style>
+
+/* ================================================= */
+/* EJERCICIO 2
+   Diferentes formas de expresar colores en CSS usando background-color.
+   background-color: define el color de fondo del elemento.
+   height: establece altura para que el color sea visible.
+*/
+
+.color1 { background-color: gray; height:50px; }
+.color2 { background-color: #0000FF; height:50px; }
+.color3 { background-color: #00F; height:50px; }
+.color4 { background-color: rgb(255,0,0); height:50px; }
+.color5 { background-color: rgba(0,255,0,0.5); height:50px; }
+.color6 { background-color: hsl(200,100%,50%); height:50px; }
+.color7 { background-color: lch(60% 100 40); height:50px; }
+.color8 { background-color: lab(60% 80 30); height:50px; }
+.color9 { background-color: oklab(60% 0.1 0.1); height:50px; }
+.color10 { background-color: hwb(100 20% 30%); height:50px; }
+
+/* ================================================= */
+/* EJERCICIO 3
+   Fondo con GIF animado centrado.
+   background-image: asigna imagen de fondo.
+   background-repeat: evita repetición.
+   background-position: centra horizontal y verticalmente.
+   background-size: ajusta tamaño sin deformar.
+   height: da altura visible al contenedor.
+*/
+
+.fondoGif {
+    background-image: url("https://media.giphy.com/media/xT9IgDEI1iZyb2wqo8/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 300px;
+}
+
+/* ================================================= */
+/* EJERCICIO 4
+   PNG con transparencia.
+   background-image: establece imagen.
+   background-color: color base visible en zonas transparentes.
+   background-repeat: repeat-x repite horizontalmente.
+*/
+
+.fondoPng {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3c/Transparent_square.svg");
+    background-color: lightblue;
+    background-repeat: repeat-x;
+    height:200px;
+}
+
+/* ================================================= */
+/* EJERCICIO 5
+   JPG fijo que no se repite.
+   background-image: imagen fondo.
+   background-repeat: no-repeat evita repetición.
+   background-attachment: fixed fija la imagen al viewport.
+*/
+
+.fondoJpg {
+    background-image: url("https://picsum.photos/600/300");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:200px;
+}
+
+/* ================================================= */
+/* EJERCICIO 6
+   background-position posiciona imagen sin repetir.
+   left bottom: izquierda abajo.
+   left top: izquierda arriba.
+   right center: derecha centrado vertical.
+   right bottom: derecha abajo.
+   bottom center: abajo centrado horizontal.
+   25% 10%: posición porcentual.
+   100px 50px: posición exacta en píxeles.
+*/
+
+.pos1 { background:url("https://picsum.photos/100") no-repeat left bottom; height:150px;}
+.pos2 { background:url("https://picsum.photos/100") no-repeat left top; height:150px;}
+.pos3 { background:url("https://picsum.photos/100") no-repeat right center; height:150px;}
+.pos4 { background:url("https://picsum.photos/100") no-repeat right bottom; height:150px;}
+.pos5 { background:url("https://picsum.photos/100") no-repeat bottom center; height:150px;}
+.pos6 { background:url("https://picsum.photos/100") no-repeat 25% 10%; height:150px;}
+.pos7 { background:url("https://picsum.photos/100") no-repeat 100px 50px; height:150px;}
+
+/* ================================================= */
+/* EJERCICIO 7
+   Opacidad de elementos.
+   opacity: controla transparencia (0 invisible, 1 visible).
+*/
+
+#saludo { background:white; width:200px; height:200px; opacity:0.5;}
+#frase { background:white; width:200px; height:200px; opacity:1;}
+#despedida { background:white; width:200px; height:200px; opacity:0;}
+
+/* ================================================= */
+/* EJERCICIO 8
+   Imágenes con distintos niveles de opacidad.
+*/
+
+.img1 { opacity:0.5; }
+.img2 { opacity:0.25; }
+.img3 { opacity:0.75; }
+
+/* ================================================= */
+/* EJERCICIO 9
+   :hover aplica estilo cuando el ratón pasa por encima.
+   opacity: reduce visibilidad al 50%.
+*/
+
+.hoverImg:hover { opacity:0.5; }
+
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 1</h2>
+<p id="coloresGenerados">Colores generados por JavaScript</p>
+
+<h2>Ejercicio 2</h2>
+<p class="color1">gray</p>
+<p class="color2">#0000FF</p>
+<p class="color3">#00F</p>
+<p class="color4">rgb</p>
+<p class="color5">rgba</p>
+<p class="color6">hsl</p>
+<p class="color7">lch</p>
+<p class="color8">lab</p>
+<p class="color9">oklab</p>
+<p class="color10">hwb</p>
+
+<h2>Ejercicio 3</h2>
+<p class="fondoGif">GIF animado centrado</p>
+
+<h2>Ejercicio 4</h2>
+<p class="fondoPng">PNG con transparencia y repeat-x</p>
+
+<h2>Ejercicio 5</h2>
+<p class="fondoJpg">JPG fijo no repetido</p>
+
+<h2>Ejercicio 6</h2>
+<p class="pos1">left bottom</p>
+<p class="pos2">left top</p>
+<p class="pos3">right center</p>
+<p class="pos4">right bottom</p>
+<p class="pos5">bottom center</p>
+<p class="pos6">25% 10%</p>
+<p class="pos7">100px 50px</p>
+
+<h2>Ejercicio 7</h2>
+<p>Ejemplo opacidad divs</p>
+<div id="saludo">Hola</div>
+<div id="frase">Visible</div>
+<div id="despedida">Invisible</div>
+
+<h2>Ejercicio 8</h2>
+<p>Opacidad 50%</p>
+<img src="https://picsum.photos/200" class="img1">
+<p>Opacidad 25%</p>
+<img src="https://picsum.photos/200" class="img2">
+<p>Opacidad 75%</p>
+<img src="https://picsum.photos/200" class="img3">
+
+<h2>Ejercicio 9</h2>
+<p>Hover transparencia</p>
+<img src="https://picsum.photos/200" class="hoverImg">
+
+<script>
+
+/* EJERCICIO 1
+   Genera dinámicamente todos los colores de los arrays.
+   document.createElement crea nuevos elementos.
+   style.backgroundColor asigna color.
+   appendChild inserta el elemento en el DOM.
+*/
+
+var coloresCss1 = ["aqua","black","blue","fuchsia","gray","green","lime","maroon","navy","olive","purple","red","silver","teal","white","yellow"];
+var coloresCss2 = ["orange","aliceblue","antiquewhite","aquamarine","azure","beige","bisque","blanchedalmond","blueviolet"];
+var coloresCss3 = ["lightgray","lightgreen","lightpink","lightsalmon","skyblue","tomato","violet","wheat","yellowgreen"];
+
+var contenedor = document.getElementById("coloresGenerados");
+
+var i;
+for(i=0;i<coloresCss1.length;i++){
+    var p = document.createElement("p");
+    p.innerHTML = coloresCss1[i];
+    p.style.backgroundColor = coloresCss1[i];
+    contenedor.appendChild(p);
+}
+
+for(i=0;i<coloresCss2.length;i++){
+    var p2 = document.createElement("p");
+    p2.innerHTML = coloresCss2[i];
+    p2.style.backgroundColor = coloresCss2[i];
+    contenedor.appendChild(p2);
+}
+
+for(i=0;i<coloresCss3.length;i++){
+    var p3 = document.createElement("p");
+    p3.innerHTML = coloresCss3[i];
+    p3.style.backgroundColor = coloresCss3[i];
+    contenedor.appendChild(p3);
+}
+
+</script>
+
+</body>
+</html>

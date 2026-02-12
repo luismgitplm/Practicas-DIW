@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios 1 y 2 - Float y Clear</title>
+
+<style>
+
+/* =============================== */
+/* EJERCICIO 1 – FLOAT */
+/* float:none → no flota */
+/* float:left → flota a la izquierda */
+/* float:right → flota a la derecha */
+
+.float-none {
+    float: none;
+    margin: 10px;
+}
+
+.float-left {
+    float: left;
+    margin: 10px;
+}
+
+.float-right {
+    float: right;
+    margin: 10px;
+}
+
+/* =============================== */
+/* EJERCICIO 2 – CLEAR */
+/* clear:none → no limpia flotaciones */
+/* clear:left → limpia flotaciones izquierda */
+/* clear:right → limpia flotaciones derecha */
+/* clear:both → limpia ambas */
+
+.clear-none { clear: none; background: lightgray; }
+.clear-left { clear: left; background: lightblue; }
+.clear-right { clear: right; background: lightgreen; }
+.clear-both { clear: both; background: lightcoral; }
+
+img {
+    width: 120px;
+}
+
+.bloque {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 1</h2>
+
+<p class="bloque">
+<img src="https://picsum.photos/120" class="float-none">
+Imagen con float: none
+</p>
+
+<p class="bloque">
+<img src="https://picsum.photos/120" class="float-left">
+Imagen con float: left
+</p>
+
+<p class="bloque">
+<img src="https://picsum.photos/120" class="float-right">
+Imagen con float: right
+</p>
+
+<div style="clear:both;"></div>
+
+<h2>Ejercicio 2</h2>
+
+<img src="https://picsum.photos/120" style="float:left; margin:10px;">
+<p class="bloque clear-none">Texto con clear: none</p>
+
+<img src="https://picsum.photos/120" style="float:left; margin:10px;">
+<p class="bloque clear-left">Texto con clear: left</p>
+
+<img src="https://picsum.photos/120" style="float:right; margin:10px;">
+<p class="bloque clear-right">Texto con clear: right</p>
+
+<img src="https://picsum.photos/120" style="float:left; margin:10px;">
+<p class="bloque clear-both">Texto con clear: both</p>
+
+</body>
+</html>

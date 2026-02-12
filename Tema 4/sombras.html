@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 3 - Intercambiar sombras con hover</title>
+<style>
+  /* Clase inicial con sombra azul */
+  .text5 {
+    color: white;
+    background-color: #007BFF; /* azul */
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px blue; /* sombra: horizontal, vertical, difuminado, color */
+    transition: all 0.3s ease; /* suaviza el cambio de sombra */
+  }
+
+  /* Clase con sombra roja */
+  .text6 {
+    color: white;
+    background-color: #FF4136; /* rojo */
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px red; /* sombra: horizontal, vertical, difuminado, color */
+    transition: all 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<h1 
+    id="cambio" 
+    class="text5"
+    onmouseenter="cambiorojo('cambio')" 
+    onmouseleave="cambioclase('cambio')">
+  !!! Azul y rojo con hover¡¡¡
+</h1>
+
+<script>
+  // Función para cambiar la clase a 'text6' (sombra roja)
+  function cambiorojo(elementoId) {
+    document.getElementById(elementoId).className = 'text6';
+  }
+
+  // Función para cambiar la clase a 'text5' (sombra azul)
+  function cambioclase(elementoId) {
+    document.getElementById(elementoId).className = 'text5';
+  }
+</script>
+
+<!-- 
+  =====================================================
+  BLOQUE DE COMENTARIOS: Sombras en CSS
+  =====================================================
+
+  text-shadow (sombra de texto)
+    Sintaxis general: text-shadow: desplazX desplazY difuminado color;
+
+    - desplazX: distancia horizontal de la sombra (positivo = derecha, negativo = izquierda)
+    - desplazY: distancia vertical de la sombra (positivo = abajo, negativo = arriba)
+    - difuminado (blur): opcional, qué tanto se difumina la sombra
+    - color: color de la sombra
+
+    Ejemplo:
+      text-shadow: 2px 2px 5px blue;
+      → 2px derecha, 2px abajo, difuminado 5px, color azul
+
+    Notas:
+    - Puedes agregar varias sombras separadas por comas.
+    - Hover no siempre afecta a la sombra si no cambias la clase o estilo directamente.
+
+   box-shadow (sombra de caja)
+    Sintaxis general: box-shadow: desplazX desplazY difuminado opcional spread color;
+
+    - desplazX: horizontal
+    - desplazY: vertical
+    - difuminado (blur)
+    - spread: opcional, tamaño extra de la sombra
+    - color: color de la sombra
+
+    Ejemplo:
+      box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
+      → sombra con 5px a la derecha y abajo, difuminado 10px, sin expansión extra, color semi-transparente
+
+   Recomendaciones:
+    - Usar transiciones para suavizar el cambio de sombras.
+    - Para efectos de hover más complejos, a veces es mejor intercambiar clases con JS.
+    - text-shadow no afecta elementos de fondo, solo el texto.
+    - box-shadow afecta todo el contenedor y puede simular relieve o profundidad.
+-->
+</body>
+</html>

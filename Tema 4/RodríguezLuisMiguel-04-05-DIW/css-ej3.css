@@ -1,0 +1,44 @@
+body { font-weight: bold; color: white; }
+
+#contenido {
+width: 700px;
+margin: auto;
+border: solid 1px black;
+background-color: #CCCCCC;
+}
+
+/* Base cajas */
+#caja1, #caja2, #caja3 {
+border: solid 1px black;
+margin: 10px;
+}
+
+/* Tamaños */
+#caja1 { width: 100px; height: 100px; background-color:#FF0000; }
+#caja2 { width: 130px; height: 130px; background-color:#00FF00; }
+#caja3 { width: 160px; height: 160px; background-color:#0000FF; }
+
+/* ============================= */
+/* MODIFICACIONES PEDIDAS */
+
+/* 1) Roja derecha, Verde izquierda, Azul none */
+#caja1 { float: right; }
+#caja2 { float: left; }
+#caja3 { float: none; }
+
+/* Para probar las otras opciones, comenta lo anterior y usa: */
+
+/* 2) Todas a la izquierda */
+/*
+#caja1, #caja2, #caja3 {
+    float: left;
+}
+*/
+
+/* 3) Todas izquierda + clear */
+/*
+#caja1, #caja2, #caja3 {
+    float: left;
+    clear: left;
+}
+*/

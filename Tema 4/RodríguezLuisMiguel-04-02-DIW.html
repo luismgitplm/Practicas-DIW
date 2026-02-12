@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios CSS</title>
+
+<style>
+
+
+/* Ejercicio 2
+   Crea una regla CSS para que todos los elementos sean de color gris (selector *)
+*/
+* {
+    color: gray;
+}
+
+
+/* Ejercicio 3
+   Elementos dentro de un p en verde y fuente Georgia (descendiente)
+*/
+p * {
+    color: green;
+    font-family: Georgia;
+}
+
+
+/* Ejercicio 4
+   Todos los elementos dentro de una tabla con bordes rojos y fondo amarillo
+*/
+table * {
+    border: 1px solid red;
+    background-color: yellow;
+}
+
+
+/* Ejercicio 5
+   Elementos inmediatamente dentro de un p en azul y Arial (hijo >)
+*/
+p > * {
+    color: blue;
+    font-family: Arial;
+}
+
+
+/* Ejercicio 6
+   strong azul solo si es descendiente de li
+*/
+li strong {
+    color: blue;
+}
+
+
+/* Ejercicio 7
+   Enlaces dentro de un div y dentro de una etiqueta en magenta
+*/
+div p * {
+    color: magenta;
+}
+
+
+/* Ejercicio 8
+   Enlace que sea primer hijo de un div sin subrayado
+*/
+div > a:first-child {
+    text-decoration: none;
+}
+
+
+/* Ejercicio 9
+   strong justo dentro de h1 subrayado
+*/
+h1 > strong {
+    text-decoration: underline;
+}
+
+
+/* Ejercicio 10
+   p adyacente a h3 en rojo
+*/
+h3 + p {
+    color: red;
+}
+
+
+/* Ejercicio 11
+   Elemento con id ejercicio10 en rojo
+*/
+#ejercicio10 {
+    color: red;
+}
+
+
+/* Ejercicio 12
+   Elementos con clase ejercicio11 en azul
+*/
+.ejercicio11 {
+    color: blue;
+}
+
+
+/* Ejercicio 13
+   Clase ejercicio12 azul excepto h2 verde y h3 amarillo
+*/
+.ejercicio12 {
+    color: blue;
+}
+
+h2.ejercicio12 {
+    color: green;
+}
+
+h3.ejercicio12 {
+    color: yellow;
+}
+
+
+/* Ejercicio 14
+   Pseudoclases LVHA
+*/
+a.ejercicio13:link { color: green; }
+a.ejercicio13:visited { color: olivedrab; }
+a.ejercicio13:hover { color: red; }
+a.ejercicio13:active { color: blue; }
+
+
+/* Ejercicio 15
+   p azul !important y p.ejercicio14 verde
+*/
+p {
+    color: blue !important;
+}
+
+p.ejercicio14 {
+    color: green;
+}
+
+
+/* Ejercicio 17
+   first-line, first-letter, before y after
+*/
+p.ejercicio16:first-line {
+    color: blue;
+}
+
+p.ejercicio16:first-letter {
+    color: red;
+    font-size: 15px;
+}
+
+p.ejercicio16::before {
+    content: "hola ";
+    color: green;
+}
+
+p.ejercicio16::after {
+    content: " adios";
+    color: yellow;
+}
+
+
+/* Ejercicio 18
+   input con foco iluminado
+*/
+input:focus {
+    background-color: yellow;
+}
+
+
+/* Ejercicio 19
+   Primer hijo de lista en negrita
+*/
+ul li:first-child {
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h3>Ejercicio 2</h3>
+<p>Texto de prueba ejercicio 2</p>
+
+<h3>Ejercicio 3</h3>
+<p><span>Texto de prueba ejercicio 3 dentro de p</span></p>
+
+<h3>Ejercicio 4</h3>
+<table>
+<tr>
+<td>Texto de prueba ejercicio 4</td>
+<td>Texto de prueba ejercicio 4</td>
+</tr>
+</table>
+
+<h3>Ejercicio 5</h3>
+<p><span>Texto de prueba ejercicio 5 hijo directo</span></p>
+
+<h3>Ejercicio 6</h3>
+<p><strong>Texto de prueba ejercicio 6 fuera lista</strong></p>
+<ul>
+<li><strong>Texto de prueba ejercicio 6 dentro lista</strong></li>
+</ul>
+
+<h3>Ejercicio 7</h3>
+<div>Texto de prueba ejercicio 7 sin etiqueta interna</div>
+<div><p><a href="#">Texto de prueba ejercicio 7 enlace</a></p></div>
+
+<h3>Ejercicio 8</h3>
+<div><a href="#">Texto de prueba ejercicio 8 primer hijo</a></div>
+<div><p>Texto previo</p><a href="#">Texto de prueba ejercicio 8 no primer hijo</a></div>
+
+<h3>Ejercicio 9</h3>
+<h1><div><strong>Texto de prueba ejercicio 9 no directo</strong></div></h1>
+<h1><strong>Texto de prueba ejercicio 9 directo</strong></h1>
+
+<h3>Ejercicio 10</h3>
+<p>Texto de prueba ejercicio 10</p>
+
+<h3>Ejercicio 11</h3>
+<p id="ejercicio10">Texto de prueba ejercicio 11</p>
+
+<h3>Ejercicio 12</h3>
+<p class="ejercicio11">Texto de prueba ejercicio 12</p>
+
+<h3>Ejercicio 13</h3>
+<p class="ejercicio12">Texto de prueba ejercicio 13 p</p>
+<h2 class="ejercicio12">Texto de prueba ejercicio 13 h2</h2>
+<h3 class="ejercicio12">Texto de prueba ejercicio 13 h3</h3>
+
+<h3>Ejercicio 14</h3>
+<p>Texto de prueba LVHA (LoVe HAte)</p>
+<a href="#" class="ejercicio13">Texto de prueba ejercicio 14</a>
+
+<h3>Ejercicio 15</h3>
+<p class="ejercicio14">Texto de prueba ejercicio 15 clase ejercicio14</p>
+
+<h3>Ejercicio 16</h3>
+<p style="color:black;">Texto de prueba ejercicio 16 estilo en línea</p>
+
+<h3>Ejercicio 17</h3>
+<p class="ejercicio16">Texto de prueba ejercicio 17 para observar primera línea y primera letra</p>
+
+<h3>Ejercicio 18</h3>
+<form>
+<input type="text" placeholder="Texto de prueba ejercicio 18">
+<input type="text" placeholder="Texto de prueba ejercicio 18">
+<input type="text" placeholder="Texto de prueba ejercicio 18">
+<input type="text" placeholder="Texto de prueba ejercicio 18">
+<input type="text" placeholder="Texto de prueba ejercicio 18">
+</form>
+
+<h3>Ejercicio 19</h3>
+<ul>
+<li>Texto de prueba ejercicio 19 elemento 1</li>
+<li>Texto de prueba ejercicio 19 elemento 2</li>
+<li>Texto de prueba ejercicio 19 elemento 3</li>
+<li>Texto de prueba ejercicio 19 elemento 4</li>
+<li>Texto de prueba ejercicio 19 elemento 5</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios Tablas CSS</title>
+
+<style>
+
+/* ================================================= */
+/* ================= EJERCICIO 1 =================== */
+/* (Código original sin modificar) */
+
+.tabla1 table {
+ border: 1px solid #03476F;
+ border-collapse: collapse;
+ font: normal 11px verdana, arial, helvetica, sans-serif;
+ color: #363636;
+ background: #92C428;
+}
+
+.tabla1 caption {
+ text-align: center;
+ font: bold 14px arial, helvetica, sans-serif;
+ background: transparent;
+ padding: 6px 4px 8px 0px;
+ color: #03476F;
+ text-transform: uppercase;
+}
+
+.tabla1 td, .tabla1 th {
+ border: 1px dotted #03476F;
+ padding: .4em;
+ color: #363636;
+}
+
+.tabla1 thead th {
+ border: 1px solid #03476F;
+ text-align: left;
+ background: #4591AD;
+ color: #FFFFFF;
+}
+
+.tabla1 tfoot td {
+ border: 1px solid #03476F;
+ text-align:center;
+ background: #4591AD;
+ color: #FFFFFF;
+}
+
+.tabla1 tr.fimpar { background: #AEE239; }
+
+/* ================================================= */
+/* ================= EJERCICIO 2a ================== */
+/* Tabla modificada según descripción */
+
+.tabla2a table {
+ border: 4px solid blue; /* Borde azul general */
+ border-collapse: collapse; /* Une bordes */
+ margin: 30px auto; /* Centra tabla */
+ font-family: Arial;
+}
+
+.tabla2a caption {
+ caption-side: top; /* Título arriba */
+ font-weight: bold;
+ margin-bottom: 10px;
+}
+
+.tabla2a th {
+ background-color: #B22222; /* Rojo oscuro */
+ color: white;
+ padding: 8px;
+ border: 4px solid blue;
+}
+
+.tabla2a tfoot td {
+ background-color: #B22222; /* Rojo oscuro */
+ color: white;
+ padding: 8px;
+ border: 4px solid blue;
+ text-align: center;
+}
+
+.tabla2a td {
+ padding: 8px;
+ border: 4px solid blue;
+}
+
+/* Filas alternas */
+.tabla2a tbody tr:nth-child(odd) {
+ background-color: #ADD8E6; /* Azul claro */
+}
+
+.tabla2a tbody tr:nth-child(even) {
+ background-color: #FFCCCC; /* Rojo claro */
+}
+
+/* ================================================= */
+/* ================= EJERCICIO 2b ================== */
+/* Igual que 2a pero con bordes redondeados */
+
+.tabla2b table {
+ border: 4px solid blue;
+ border-collapse: separate; /* Necesario para border-radius */
+ border-spacing: 0;
+ border-radius: 15px; /* Bordes redondeados tabla */
+ margin: 30px auto;
+ font-family: Arial;
+ overflow: hidden;
+}
+
+.tabla2b th {
+ background-color: #B22222;
+ color: white;
+ padding: 8px;
+ border: 4px solid blue;
+}
+
+.tabla2b tfoot td {
+ background-color: #B22222;
+ color: white;
+ padding: 8px;
+ border: 4px solid blue;
+ text-align: center;
+}
+
+.tabla2b td {
+ padding: 8px;
+ border: 4px solid blue;
+}
+
+.tabla2b tbody tr:nth-child(odd) {
+ background-color: #ADD8E6;
+}
+
+.tabla2b tbody tr:nth-child(even) {
+ background-color: #FFCCCC;
+}
+
+/* Redondear esquinas superiores */
+.tabla2b thead tr:first-child th:first-child {
+ border-top-left-radius: 15px;
+}
+
+.tabla2b thead tr:first-child th:last-child {
+ border-top-right-radius: 15px;
+}
+
+/* Redondear esquinas inferiores */
+.tabla2b tfoot tr:last-child td:first-child {
+ border-bottom-left-radius: 15px;
+}
+
+.tabla2b tfoot tr:last-child td:last-child {
+ border-bottom-right-radius: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 1</h2>
+<div class="tabla1">
+<table>
+<caption>Distancias planetarias</caption>
+<thead>
+<tr>
+<th>Planeta</th>
+<th>Distancia desde la Tierra</th>
+<th>Web</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">Astronomía Gobierno de España</td>
+</tr>
+</tfoot>
+<tbody>
+<tr class="fimpar">
+<td>Venus</td>
+<td>108 Millones de Kilómetros</td>
+<td><a href="#">Web Venus</a></td>
+</tr>
+<tr>
+<td>Saturno</td>
+<td>1.281 Millones de Kilómetros</td>
+<td><a href="#">Web Saturno</a></td>
+</tr>
+<tr class="fimpar">
+<td>Urano</td>
+<td>2.720 Millones de Kilómetros</td>
+<td><a href="#">Web Urano</a></td>
+</tr>
+<tr>
+<td>Neptuno</td>
+<td>4.504 Millones de Kilómetros</td>
+<td><a href="#">Web Neptuno</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>Ejercicio 2a</h2>
+<div class="tabla2a">
+<table>
+<caption>Distancias planetarias</caption>
+<thead>
+<tr>
+<th>Planeta</th>
+<th>Distancia desde la Tierra</th>
+<th>Web</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">Astronomía Gobierno de España</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>Venus</td>
+<td>108 Millones de Kilómetros</td>
+<td>Web Venus</td>
+</tr>
+<tr>
+<td>Saturno</td>
+<td>1.281 Millones de Kilómetros</td>
+<td>Web Saturno</td>
+</tr>
+<tr>
+<td>Urano</td>
+<td>2.720 Millones de Kilómetros</td>
+<td>Web Urano</td>
+</tr>
+<tr>
+<td>Neptuno</td>
+<td>4.504 Millones de Kilómetros</td>
+<td>Web Neptuno</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>Ejercicio 2b</h2>
+<div class="tabla2b">
+<table>
+<caption>Distancias planetarias</caption>
+<thead>
+<tr>
+<th>Planeta</th>
+<th>Distancia desde la Tierra</th>
+<th>Web</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">Astronomía Gobierno de España</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>Venus</td>
+<td>108 Millones de Kilómetros</td>
+<td>Web Venus</td>
+</tr>
+<tr>
+<td>Saturno</td>
+<td>1.281 Millones de Kilómetros</td>
+<td>Web Saturno</td>
+</tr>
+<tr>
+<td>Urano</td>
+<td>2.720 Millones de Kilómetros</td>
+<td>Web Urano</td>
+</tr>
+<tr>
+<td>Neptuno</td>
+<td>4.504 Millones de Kilómetros</td>
+<td>Web Neptuno</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>

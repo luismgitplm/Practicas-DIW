@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios Grid</title>
+<style>
+/* ================= EJERCICIO 1 ================= */
+.ej1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Primera columna el doble de ancho */
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 400px;
+}
+.ej1>div { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 2 ================= */
+.ej2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  grid-template-rows: repeat(4, 1fr);    /* 4 filas */
+  gap: 10px;
+}
+.ej2>div { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 3 ================= */
+.ej3 {
+  display: grid;
+  grid-template-columns: 100px 150px 150px;
+  grid-template-rows: repeat(3, 100px);
+  gap: 1px;
+}
+.ej3>div { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 4 ================= */
+.ej4 {
+  display: grid;
+  grid-template-columns: 100px 200px 200px;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";
+  gap: 1px;
+}
+.ej4 #celda1 { grid-area: header; background-color: cyan; text-align:center; }
+.ej4 #celda2 { grid-area: sidebar; background-color: cyan; text-align:center; }
+.ej4 #celda3 { grid-area: content; background-color: cyan; text-align:center; }
+.ej4 #celda4 { grid-area: footer; background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 5 ================= */
+.ej5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  gap: 1px;
+}
+.ej5 #cabecera { grid-column: 1 / 4; background-color: cyan; text-align:center; }
+.ej5 #sidebar { grid-column: 3 / 4; grid-row: 2 / 3; background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 6 ================= */
+.ej6 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1px;
+}
+.ej6>div { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 7 ================= */
+.ej7 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1px;
+}
+.ej7>div:nth-child(1) { background: transparent; } /* hueco vacío */
+.ej7>div:not(:nth-child(1)) { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 8 ================= */
+.ej8 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 1px;
+}
+.ej8>div { background-color: cyan; text-align:center; }
+.ej8>div:first-child { order: 6; } /* Reordenar la primera celda al final */
+
+/* ================= EJERCICIO 9 ================= */
+.ej9 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1px;
+}
+.ej9>div { background-color: cyan; text-align:center; }
+
+/* ================= EJERCICIO 10 ================= */
+.ej10 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5px;
+}
+.ej10 #celda4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 50px;
+  gap: 1px;
+}
+.ej10>div { background-color: cyan; text-align:center; }
+
+</style>
+</head>
+<body>
+
+<h2>Ejercicio 1</h2>
+<div class="ej1">
+  <div>1</div><div>2</div><div>3</div>
+  <div>4</div><div>5</div><div>6</div>
+  <div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>Ejercicio 2</h2>
+<div class="ej2">
+  <div>celda 1</div><div>celda 2</div><div>celda 3</div><div>celda 4</div>
+  <div>celda 5</div><div>celda 6</div><div>celda 7</div><div>celda 8</div>
+  <div>celda 9</div><div>celda 10</div><div>celda 11</div><div>celda 12</div>
+  <div>celda 13</div><div>celda 14</div><div>celda 15</div><div>celda 16</div>
+</div>
+
+<h2>Ejercicio 3</h2>
+<div class="ej3">
+  <div>celda 1</div><div>celda 2</div><div>celda 3</div>
+  <div>celda 4</div><div>celda 5</div><div>celda 6</div>
+  <div>celda 7</div><div>celda 8</div><div>celda 9</div>
+</div>
+
+<h2>Ejercicio 4</h2>
+<div class="ej4">
+  <div id="celda1">celda 1</div>
+  <div id="celda2">celda 2</div>
+  <div id="celda3">celda 3</div>
+  <div id="celda4">celda 4</div>
+</div>
+
+<h2>Ejercicio 5</h2>
+<div class="ej5">
+  <div id="cabecera">cabecera</div>
+  <div>celda 2</div>
+  <div id="sidebar">sidebar</div>
+  <div>celda 4</div>
+  <div>celda 5</div>
+  <div>celda 6</div>
+</div>
+
+<h2>Ejercicio 6</h2>
+<div class="ej6">
+  <div>celda 1</div><div>celda 2</div><div>celda 3</div><div>celda 4</div>
+  <div>celda 5</div><div>celda 6</div><div>celda 7</div><div>celda 8</div>
+  <div>celda 9</div><div>celda 10</div><div>celda 11</div><div>celda 12</div>
+</div>
+
+<h2>Ejercicio 7</h2>
+<div class="ej7">
+  <div></div><div>celda 2</div><div>celda 3</div>
+  <div>celda 4</div><div>celda 5</div><div>celda 6</div>
+  <div>celda 7</div><div>celda 8</div><div>celda 9</div>
+</div>
+
+<h2>Ejercicio 8</h2>
+<div class="ej8">
+  <div>celda 1</div><div>celda 2</div><div>celda 3</div>
+  <div>celda 4</div><div>celda 5</div><div>celda 6</div>
+</div>
+
+<h2>Ejercicio 9</h2>
+<div class="ej9">
+  <div>celda 1</div><div>celda 2</div><div>celda 3</div>
+  <div>celda 4</div><div>celda 5</div><div>celda 6</div>
+</div>
+
+<h2>Ejercicio 10</h2>
+<div class="ej10">
+  <div>celda 1</div><div>celda 2</div>
+  <div>celda 3</div><div id="celda4">
+    <div>cabecera</div><div>col1</div><div>col2</div>
+  </div>
+</div>
+
+<!-- ==============================================
+BLOQUE DE COMENTARIOS SOBRE CSS GRID
+============================================== -->
+<!-- 
+1. display: grid -> activa el modo Grid en el contenedor. 
+2. grid-template-columns / grid-template-rows -> definen el tamaño y número de columnas y filas.
+   - Se pueden usar fr (fracciones), px, % o auto.
+   - repeat(n, valor) simplifica varias columnas o filas iguales.
+3. gap -> separa filas y columnas sin usar margenes.
+4. grid-template-areas -> permite nombrar áreas y ubicar celdas de forma semántica.
+5. grid-area -> asigna una celda a una de las áreas definidas.
+6. order -> cambia el orden de los elementos sin modificar el HTML.
+7. nth-child() -> permite aplicar estilos según posición dentro del contenedor.
+8. grid anidado -> un div dentro de otro div con display:grid crea un sub-grid.
+9. Celdas combinadas -> se pueden unir usando grid-column / grid-row o con áreas.
+10. celdas vacías -> si no hay div, queda espacio vacío.
+11. Uso de medidas relativas (fr) y absolutas (px) -> permite adaptar la cuadrícula a distintos diseños.
+12. Se pueden hacer tablas, layouts, sidebars y control de flujo usando únicamente grid.
+-->
+
+</body>
+</html>
